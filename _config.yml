@@ -9,4 +9,4 @@ github_username:  paulfurley
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /:title/
