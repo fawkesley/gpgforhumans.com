@@ -5,8 +5,7 @@ date:   2015-01-07 21:31:03
 categories: encrypt
 ---
 
-GPG can use symmetric encryption to protect the contents of a file with a
-passphrase (as opposed to asymmetric, public/private key encryption):
+To encrypt a file with a password or passphrase, use the `--symmetric` command:
 
 {% highlight bash %}
 
@@ -17,5 +16,19 @@ myfile.zip.gpg
 
 {% endhighlight %}
 
-This will create a new file `myfile.zip.gpg`, leaving the original `myfile.zip`
-intact. Don't forget to delete it if required.
+You'll be prompted to enter a passphrase twice, then a new file
+`myfile.zip.gpg` will be created.
+
+Don't forget to delete the original `myfile.zip` if required.
+
+## Password Encryption is *Symmetric* Encryption
+
+GPG can encrypt in one of two modes:
+
+  - **symmetric**, using a password to create a key:
+
+    `gpg --symmetric myfile.zip`
+
+  - **asymmetric**, using someone's public key:
+
+    `gpg --encrypt --recipient alice@email.com myfile.zip`
